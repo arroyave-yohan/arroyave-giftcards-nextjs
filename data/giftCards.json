@@ -1,0 +1,43 @@
+{
+  "giftCards": [
+    {
+      "id": "gift01",
+      "redemptionToken": "32ScL57220Vapb8pc50HJ3mWH1cl1L8x",
+      "redemptionCode": "gift01",
+      "balance": 1000000,
+      "emissionDate": "2025-04-24T20:22:58.163",
+      "expiringDate": "2027-01-01T00:00:00",
+      "currencyCode": "COP",
+      "discount": false,
+      "transactions": {
+        "href": "cards/gift01/transactions"
+      }
+    },
+    {
+      "id": "gift02",
+      "redemptionToken": "45TyU89331Wbqc9qd61IK4nXI2dm2M9y",
+      "redemptionCode": "gift02",
+      "balance": 500000,
+      "emissionDate": "2025-05-15T14:30:22.456",
+      "expiringDate": "2027-06-01T00:00:00",
+      "currencyCode": "COP",
+      "discount": false,
+      "transactions": {
+        "href": "cards/gift02/transactions"
+      }
+    },
+    {
+      "id": "gift03",
+      "redemptionToken": "78ZxV12442Xcrd0re72JL5oYJ3en3N0z",
+      "redemptionCode": "gift03",
+      "balance": 2000000,
+      "emissionDate": "2025-06-10T09:15:45.789",
+      "expiringDate": "2027-12-31T00:00:00",
+      "currencyCode": "COP",
+      "discount": true,
+      "transactions": {
+        "href": "cards/gift03/transactions"
+      }
+    }
+  ]
+}

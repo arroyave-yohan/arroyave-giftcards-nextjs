@@ -1,0 +1,60 @@
+[
+    {
+        "id": "001",
+        "companyName": "Arroyave",
+        "balance": 1000000,
+        "members": [
+            {
+                "id": "yohan.arroyave@vtex.com",
+                "redemptionToken": "7d8f3b2a9c1e4f6d8a2b5c7e9f1a3d5b",
+                "redemptionCode": "ARRY001MBR01"
+            },
+            {
+                "id": "yohan.arroyave+cliente1@vtex.com",
+                "redemptionToken": "2e5a8c3f9d1b7e4a6c8f2d5b9a3e1c7d",
+                "redemptionCode": "ARRY001MBR02"
+            }
+        ]
+    },
+    {
+        "id": "002",
+        "companyName": "Company 2",
+        "balance": 10000000,
+        "members": [
+            {
+                "id": "yohan.arroyave+cliente2@vtex.com",
+                "redemptionToken": "9a3e5c1f7d2b8e4a6c9f3d5b7a1e2c8d",
+                "redemptionCode": "COMP002MBR01"
+            },
+            {
+                "id": "yohan.arroyave+cliente3@vtex.com",
+                "redemptionToken": "4f8a2c5e9d1b3f7a6c8e2d5b9a3f1c7e",
+                "redemptionCode": "COMP002MBR02"
+            }
+        ]
+    },
+    {
+        "id": "003",
+        "companyName": "Company 3",
+        "balance": 100000,
+        "members": [
+            {
+                "id": "yohan.arroyave+cliente4@vtex.com",
+                "redemptionToken": "6c9e3a1f5d8b2e7a4c6f9d3b5a1e8c2d",
+                "redemptionCode": "COMP003MBR01"
+            }
+        ]
+    },
+    {
+        "id": "004",
+        "companyName": "Company 4",
+        "balance": 500000,
+        "members": [
+            {
+                "id": "yohan.arroyave+cliente5@vtex.com",
+                "redemptionToken": "3e7a9c2f5d1b8e4a6c3f9d2b7a5e1c8d",
+                "redemptionCode": "COMP004MBR01"
+            }
+        ]
+    }
+]
