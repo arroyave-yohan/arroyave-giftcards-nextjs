@@ -24,14 +24,28 @@ export interface Member {
 }
 
 export interface Company {
+  id: string;
   companyName: string;
   balance: number;
   members: Member[];
 }
 
+export interface Transaction {
+  id: string;           // UUID
+  date: string;         // ISO timestamp
+  amount: number;        // Monto (positivo para recharge, negativo para purchase)
+  type: 'purchase' | 'recharge' | 'settlement' | 'cancelation' | 'refund';
+  userId: string;       // Email del usuario
+  companyId: string;    // ID de la compañía
+  cardId?: string;      // ID de la gift card (opcional)
+  error?: string;       // Descripción del error (opcional, para settlements/cancelations con error)
+  originalTransactionId?: string; // ID de la transacción original (para settlements/cancelations)
+}
+
 const DATA_DIR = path.join(process.cwd(), 'data');
 const GIFT_CARDS_FILE = path.join(DATA_DIR, 'giftCards.json');
 const CREDIT_DB_FILE = path.join(DATA_DIR, 'creditDB.json');
+const TRANSACTIONS_FILE = path.join(DATA_DIR, 'transactions.json');
 
 /**
  * Loads gift cards from the JSON file
@@ -83,6 +97,35 @@ export function saveCreditDB(companies: Company[]): boolean {
     return true;
   } catch (error) {
     console.error('Error saving credit DB:', error);
+    return false;
+  }
+}
+
+/**
+ * Loads transactions from the JSON file
+ */
+export function loadTransactions(): Transaction[] {
+  try {
+    if (!fs.existsSync(TRANSACTIONS_FILE)) {
+      return [];
+    }
+    const fileContents = fs.readFileSync(TRANSACTIONS_FILE, 'utf-8');
+    return JSON.parse(fileContents);
+  } catch (error) {
+    console.error('Error loading transactions:', error);
+    return [];
+  }
+}
+
+/**
+ * Saves transactions to the JSON file
+ */
+export function saveTransactions(transactions: Transaction[]): boolean {
+  try {
+    fs.writeFileSync(TRANSACTIONS_FILE, JSON.stringify(transactions, null, 2), 'utf-8');
+    return true;
+  } catch (error) {
+    console.error('Error saving transactions:', error);
     return false;
   }
 }

@@ -1,0 +1,95 @@
+[
+  {
+    "id": "6a3ed8ba7b8148589faafbd6bb61a27d",
+    "date": "2025-11-26T19:59:51.171Z",
+    "amount": 1000,
+    "type": "recharge",
+    "userId": "admin",
+    "companyId": "001"
+  },
+  {
+    "id": "8f4c312ec67543fe9fcec4e7c00a690d",
+    "date": "2025-11-26T20:48:44.027Z",
+    "amount": 0,
+    "type": "settlement",
+    "userId": "",
+    "companyId": "",
+    "cardId": "arroyave_0",
+    "error": "Transaction not found",
+    "originalTransactionId": "fd0f3c9d37a84ed58eff48550364dc78"
+  },
+  {
+    "id": "5bcd0569c2d74dea8ceccfc5283d6165",
+    "date": "2025-11-26T21:48:46.335Z",
+    "amount": 0,
+    "type": "settlement",
+    "userId": "",
+    "companyId": "",
+    "cardId": "arroyave_0",
+    "error": "Transaction not found",
+    "originalTransactionId": "fd0f3c9d37a84ed58eff48550364dc78"
+  },
+  {
+    "id": "a8c2497aba0d4e669f6f37debe2102a8",
+    "date": "2025-11-26T22:48:49.186Z",
+    "amount": 0,
+    "type": "settlement",
+    "userId": "",
+    "companyId": "",
+    "cardId": "arroyave_0",
+    "error": "Transaction not found",
+    "originalTransactionId": "fd0f3c9d37a84ed58eff48550364dc78"
+  },
+  {
+    "id": "48933b99011c4681bbb261968519ee95",
+    "date": "2025-11-26T23:04:40.902Z",
+    "amount": -49000,
+    "type": "purchase",
+    "userId": "yohan.arroyave@vtex.com",
+    "companyId": "001",
+    "cardId": "arroyave_0"
+  },
+  {
+    "id": "ecdd961a16cb40b290c3ac9b806f0215",
+    "date": "2025-11-26T23:05:42.045Z",
+    "amount": 49000,
+    "type": "settlement",
+    "userId": "yohan.arroyave@vtex.com",
+    "companyId": "001",
+    "cardId": "arroyave_0",
+    "originalTransactionId": "48933b99011c4681bbb261968519ee95"
+  },
+  {
+    "id": "b142943e77f043019ff05617355b5ced",
+    "date": "2025-11-26T23:48:51.411Z",
+    "amount": 0,
+    "type": "settlement",
+    "userId": "",
+    "companyId": "",
+    "cardId": "arroyave_0",
+    "error": "Transaction not found",
+    "originalTransactionId": "fd0f3c9d37a84ed58eff48550364dc78"
+  },
+  {
+    "id": "812a3ac0b14848adb4eeceb863b75df2",
+    "date": "2025-11-27T00:48:53.129Z",
+    "amount": 0,
+    "type": "settlement",
+    "userId": "",
+    "companyId": "",
+    "cardId": "arroyave_0",
+    "error": "Transaction not found",
+    "originalTransactionId": "fd0f3c9d37a84ed58eff48550364dc78"
+  },
+  {
+    "id": "ba26f81530584074b5e574764d642a76",
+    "date": "2025-11-27T01:48:55.093Z",
+    "amount": 0,
+    "type": "settlement",
+    "userId": "",
+    "companyId": "",
+    "cardId": "arroyave_0",
+    "error": "Transaction not found",
+    "originalTransactionId": "fd0f3c9d37a84ed58eff48550364dc78"
+  }
+]

@@ -65,12 +65,28 @@ body::before {
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 1.5rem;
 }
 
 .glass-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 48px rgba(99, 102, 241, 0.2);
   border-color: var(--accent-primary);
+}
+
+/* Ensure proper spacing for main containers */
+.max-w-7xl {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .max-w-7xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 /* Button styles */
@@ -124,6 +140,15 @@ body::before {
   background: rgba(99, 102, 241, 0.2);
 }
 
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  transform: none;
+}
+
 /* Input styles */
 .input-field {
   width: 100%;
@@ -151,11 +176,13 @@ body::before {
 .table-container {
   overflow-x: auto;
   border-radius: 12px;
+  margin: 1rem 0;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin: 0;
 }
 
 thead {
@@ -163,7 +190,7 @@ thead {
 }
 
 th {
-  padding: 1rem;
+  padding: 1.25rem 1rem;
   text-align: left;
   font-weight: 600;
   color: var(--accent-primary);
@@ -173,12 +200,16 @@ th {
 }
 
 td {
-  padding: 1rem;
+  padding: 1.25rem 1rem;
   border-bottom: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 tr:hover td {
   background: var(--hover-overlay);
+}
+
+tr:last-child td {
+  border-bottom: none;
 }
 
 /* Stats card */

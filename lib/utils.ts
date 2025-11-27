@@ -5,6 +5,29 @@
 import { loadCreditDB, Company } from './db';
 
 /**
+ * Validates email format
+ */
+export function isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+/**
+ * Checks if a user already exists in a company
+ */
+export function userExistsInCompany(company: Company, userId: string): boolean {
+    return company.members.some(member => member.id === userId);
+}
+
+/**
+ * Finds a company by ID
+ */
+export function findCompanyById(companyId: string): Company | null {
+    const companies = loadCreditDB();
+    return companies.find(c => c.id === companyId) || null;
+}
+
+/**
  * Parses a card_id to extract the company name and member index
  * 
  * Expected format: empresa_indice (e.g., arroyave_0, company2_1)
