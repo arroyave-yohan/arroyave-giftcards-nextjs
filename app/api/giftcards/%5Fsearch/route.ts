@@ -17,6 +17,12 @@ export async function POST(request: NextRequest) {
         // Get request body
         const body = await request.json().catch(() => null);
 
+        // Log request body
+        console.log('\n' + '='.repeat(80));
+        console.log('[_search] Request Body:');
+        console.log(JSON.stringify(body, null, 2));
+        console.log('='.repeat(80) + '\n');
+
         // Extract client email
         if (!body || !body.client || !body.client.email) {
             return NextResponse.json([]);

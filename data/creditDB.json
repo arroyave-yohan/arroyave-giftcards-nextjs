@@ -48,7 +48,7 @@
   {
     "id": "004",
     "companyName": "Company 4",
-    "balance": 500000,
+    "balance": 0,
     "members": [
       {
         "id": "yohan.arroyave+cliente5@vtex.com",

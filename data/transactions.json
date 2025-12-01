@@ -91,5 +91,24 @@
     "cardId": "arroyave_0",
     "error": "Transaction not found",
     "originalTransactionId": "fd0f3c9d37a84ed58eff48550364dc78"
+  },
+  {
+    "id": "d1a399b6d47b49b09bfa7eadb436c0af",
+    "date": "2025-11-27T19:33:32.887Z",
+    "amount": -1000,
+    "type": "purchase",
+    "userId": "yohan.arroyave+cliente5@vtex.com",
+    "companyId": "004",
+    "cardId": "company4_0"
+  },
+  {
+    "id": "77e579ce5f634282876a572c9c4675eb",
+    "date": "2025-11-27T19:34:34.955Z",
+    "amount": 1000,
+    "type": "settlement",
+    "userId": "yohan.arroyave+cliente5@vtex.com",
+    "companyId": "004",
+    "cardId": "company4_0",
+    "originalTransactionId": "d1a399b6d47b49b09bfa7eadb436c0af"
   }
 ]
