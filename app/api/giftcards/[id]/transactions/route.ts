@@ -31,28 +31,31 @@ export async function POST(
         const amount = body.amount || body.value || 0;
 
         if (!amount || typeof amount !== 'number' || amount <= 0) {
-            return NextResponse.json(
-                { error: 'Valid amount (> 0) is required in request body' },
-                { status: 400 }
-            );
+            const errorResponse = { error: 'Valid amount (> 0) is required in request body' };
+            console.log(`\n[POST /giftcards/${cardId}/transactions] Response Code: 400`);
+            console.log(`[POST /giftcards/${cardId}/transactions] Response Body:`, JSON.stringify(errorResponse, null, 2));
+            console.log('='.repeat(80) + '\n');
+            return NextResponse.json(errorResponse, { status: 400 });
         }
 
         // Find company and user by cardId
         const [company, memberIndex] = findCompanyByCardId(cardId);
 
         if (!company || memberIndex === null) {
-            return NextResponse.json(
-                { error: 'Gift card not found' },
-                { status: 404 }
-            );
+            const errorResponse = { error: 'Gift card not found' };
+            console.log(`\n[POST /giftcards/${cardId}/transactions] Response Code: 404`);
+            console.log(`[POST /giftcards/${cardId}/transactions] Response Body:`, JSON.stringify(errorResponse, null, 2));
+            console.log('='.repeat(80) + '\n');
+            return NextResponse.json(errorResponse, { status: 404 });
         }
 
         // Validate balance
         if (company.balance < amount) {
-            return NextResponse.json(
-                { error: 'Insufficient balance' },
-                { status: 400 }
-            );
+            const errorResponse = { error: 'Insufficient balance' };
+            console.log(`\n[POST /giftcards/${cardId}/transactions] Response Code: 400`);
+            console.log(`[POST /giftcards/${cardId}/transactions] Response Body:`, JSON.stringify(errorResponse, null, 2));
+            console.log('='.repeat(80) + '\n');
+            return NextResponse.json(errorResponse, { status: 400 });
         }
 
         const user = company.members[memberIndex];
@@ -64,10 +67,11 @@ export async function POST(
         const saved = saveCreditDB(companies);
 
         if (!saved) {
-            return NextResponse.json(
-                { error: 'Error updating balance' },
-                { status: 500 }
-            );
+            const errorResponse = { error: 'Error updating balance' };
+            console.log(`\n[POST /giftcards/${cardId}/transactions] Response Code: 500`);
+            console.log(`[POST /giftcards/${cardId}/transactions] Response Body:`, JSON.stringify(errorResponse, null, 2));
+            console.log('='.repeat(80) + '\n');
+            return NextResponse.json(errorResponse, { status: 500 });
         }
 
         // Generate a unique transaction ID
@@ -98,9 +102,9 @@ export async function POST(
             }
         };
 
-        // Log BEFORE preparing response
-        console.log(`\n[POST /giftcards/${cardId}/transactions] Response:`);
-        console.log(JSON.stringify(response, null, 2));
+        // Log response code and body
+        console.log(`\n[POST /giftcards/${cardId}/transactions] Response Code: 200`);
+        console.log(`[POST /giftcards/${cardId}/transactions] Response Body:`, JSON.stringify(response, null, 2));
         console.log('='.repeat(80) + '\n');
 
         return NextResponse.json(response, {
@@ -112,9 +116,10 @@ export async function POST(
 
     } catch (error) {
         console.error('Error in transactions endpoint:', error);
-        return NextResponse.json(
-            { error: 'Internal Server Error' },
-            { status: 500 }
-        );
+        const errorResponse = { error: 'Internal Server Error' };
+        console.log(`\n[POST /giftcards/[id]/transactions] Response Code: 500`);
+        console.log(`[POST /giftcards/[id]/transactions] Response Body:`, JSON.stringify(errorResponse, null, 2));
+        console.log('='.repeat(80) + '\n');
+        return NextResponse.json(errorResponse, { status: 500 });
     }
 }
